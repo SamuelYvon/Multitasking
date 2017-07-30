@@ -60,7 +60,7 @@ void configure_pit() {
 	int freq = 1193182 / 100;
 	write_port(0x43, 0b00110100);
 	write_port(0x40, freq & 0xFFFF);
-	write_port(0x40, (freq >> 8) & 0xFFFF);
+	write_port(0x40, (freq >> 16) & 0xFFFF);
 }
 
 void idt_init(void)
