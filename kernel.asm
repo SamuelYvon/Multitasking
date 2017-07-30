@@ -13,7 +13,6 @@ section .text
 global switch_stack
 global timer_handler
 global start
-global keyboard_handler
 global read_port
 global write_port
 global load_idt
