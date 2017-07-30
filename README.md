@@ -9,6 +9,14 @@ Writing this project gave me a much deeper understanding of x86 assembly and of 
 
 # Executing and building the project
 
+## Requirements
+
+- GCC
+- NASM assembler
+- QEMU i386
+
+## Howto
+
 Simply run ./build_and_run.sh to, like the script says, build and run the project. It will require qemu-system-i386 to run. The kernel will not run until you attach a debugger to it. You can simply attach with GDB to port :1234 (the default port of qemu). If you want to start it without debugging, you can remove the -S option in the ./build_and_run.sh script. You can also remove the -s to remove debugging all together.
 
 I used visual studio code to work on this project, with the native debugging extension to connect to GDB. It can be useful to see what is going on and make modifications to the kernel.
