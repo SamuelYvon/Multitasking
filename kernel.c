@@ -57,10 +57,11 @@ void configure_pic() {
 }
 
 void configure_pit() {
-	int freq = 1193182 / 100;
+	// The divisor is 16 bit. The low byte goes into first followed by the high byte
+	short freq = 1193182 / 100;
 	write_port(0x43, 0b00110100);
-	write_port(0x40, freq & 0xFFFF);
-	write_port(0x40, (freq >> 16) & 0xFFFF);
+	write_port(0x40, freq & 0xFF);
+	write_port(0x40, (freq >> 8) & 0xFF);
 }
 
 void idt_init(void)
